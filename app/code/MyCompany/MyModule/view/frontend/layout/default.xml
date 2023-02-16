@@ -4,6 +4,7 @@
         <css src="css/styles.css" />
     </head>
     <body>
+      <referenceBlock name="catalog.product.related" remove="true" />
       <referenceBlock name="form.subscribe">
             <arguments>
                <argument name="placeholder" xsi:type="string" >Email Address</argument>
