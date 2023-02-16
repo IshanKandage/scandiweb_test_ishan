@@ -1,19 +1,23 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-     <head>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
         <css src="css/styles.css" />
     </head>
     <body>
-      <referenceBlock name="catalog.product.related" remove="true" />
-      <referenceBlock name="form.subscribe">
+        <referenceBlock name="catalog.product.related" remove="true" />
+        <referenceBlock name="form.subscribe">
             <arguments>
-               <argument name="placeholder" xsi:type="string" >Email Address</argument>
+                <argument name="placeholder" xsi:type="string">Email Address</argument>
             </arguments>
-      </referenceBlock>
-      <move element="form.subscribe" destination="page.bottom.container" before="-"/>
-      <move element="header.banner.container" destination="header.container" before="-"/>
-         <container name="header.banner.container" label="Header Banner Container" as="headerBannerContainer" htmlTag="div" htmlClass="header-banner-container" before="-">
-            <block class="Magento\Framework\View\Element\Template" name="header.banner.block" template="MyCompany_MyModule::header/banner.phtml" />
+        </referenceBlock>
+        <move element="form.subscribe" destination="page.bottom.container" before="-" />
+        <move element="header.banner.container" destination="header.container" before="-" />
+        <container name="header.banner.container" label="Header Banner Container"
+            as="headerBannerContainer" htmlTag="div" htmlClass="header-banner-container" before="-"
+        >
+            <block ifconfig="carriers/freeshipping/active" class="Magento\Framework\View\Element\Template" name="header.banner.block"
+                template="MyCompany_MyModule::header/banner.phtml" />
         </container>
     </body>
 </page>
